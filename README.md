@@ -62,3 +62,28 @@
 - Service API cannot handle advance ingress patterns (host based and path based routing for example)
 
 ### Ingress API (Layer 7 Routing)
+
+- An API object that manages routing of external HTTP/S traffic to services running in a cluster
+- Kubernetes the ingress API, but still needs a third party controller to achieve it
+  - Part of the functionaluty is to act as a reverse proxy
+  - Infra providers can create ingress controllers optimisied for their environments
+  
+#### Host/path based routing
+
+- A single ingress controller having one IP will route traffic to a service by extracting the host header and path information which is associated to a backend service served by a replica set.
+- It is possible to combine rules that allow virtual hosts and paths.
+  
+#### Characteristics of Ingress API
+
+- Defines traffic routes between external clients and services
+- Allows encrypted communication using Transport Layer Security (TLS)
+- Load balances client traffic across a service's endpoints (pods)
+- Introduced in v1.1 and will likely keep evolving
+
+#### Sample Ingress Controllers
+
+Nginx
+Traefik
+Contour
+
+
