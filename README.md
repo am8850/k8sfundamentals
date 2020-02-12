@@ -72,7 +72,21 @@
 
 - A single ingress controller having one IP will route traffic to a service by extracting the host header and path information which is associated to a backend service served by a replica set.
 - It is possible to combine rules that allow virtual hosts and paths.
-  
+
+#### Cert Manager 
+
+##### TLS Secret Considerations
+
+- Secret must contain a PEM encoded certificate and a private key
+- Intermediate certificates must be bundled with public key certificate
+- TLS secrets are refenceable by ingress objects in the same namespace
+
+##### Benefits
+
+- Manages lifecycle of a certificate (issuance, expiration, etc.)
+
+#####
+
 #### Characteristics of Ingress API
 
 - Defines traffic routes between external clients and services
@@ -82,8 +96,6 @@
 
 #### Sample Ingress Controllers
 
-Nginx
-Traefik
-Contour
+- Nginx, Traefik, Contour
 
 
